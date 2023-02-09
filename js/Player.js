@@ -6,6 +6,12 @@ class Player {
     this.active = active;
     this.tokens = createTokens(21);
   }
+
+/** 
+ * Creates token objects for player
+ * @param {integer} num - Number of token objects to be created in the system
+ */
+
   createTokens(num){
     const tokens = [];
 
