@@ -12,3 +12,11 @@ button.addEventListener('click', function(){
   this.style.display = 'none';
   document.getElementById('play-area').style.opacity = '1';
 })
+
+/**
+ * Listen for keyboard presses
+ */
+
+document.addEventListener('keydown', function(e){
+  console.log(e.key); // outpus a string naming the pressed key
+})
