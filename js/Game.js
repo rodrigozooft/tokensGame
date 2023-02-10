@@ -19,9 +19,16 @@ class Game {
 
     return players;
   }
+
+  get activePlayer(){
+    return this.players.find(player => player.active);
+  }
   /*
-   * Gets game ready for play
+   * Begins game 
    */
   startGame(){
+    this.board.drawHTMLBoard();
+    this.activePlayer.activeToken.drawHTMLToken();
+    this.ready = true;
   }
 }

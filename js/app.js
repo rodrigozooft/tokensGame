@@ -6,7 +6,7 @@ const game = new Game();
 
 const button = document.getElementById('begin-game');
 
-button.addEventListener('click', () => {
+button.addEventListener('click', function(){
   game.startGame();
 
   this.style.display = 'none';
