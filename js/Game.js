@@ -150,8 +150,29 @@ class Game {
      * Displays winner info.
      * @param   {String}    message - Game over message.      
      */
-    gameOver(message) {
+  gameOver(message) {
 		document.getElementById('game-over').style.display = 'block';
-        document.getElementById('game-over').textContent = message;
+    document.getElementById('game-over').textContent = message;
     }
+
+  /**
+   * Updates game state after token is dropped.
+   * @param {Object} token - The token that's being dropped.
+   * @param {Object} target - Targeted space for dropped token.
+   */
+  updateGameState(token, target){
+    token.mark(token);
+    
+    if(!his.checkForWin(target)){
+      this.switchPlayers();
+
+      if(this.activePlayer.checkTokens()){
+        this.activePlayer.activeToken.drawHTMLToken();
+      }else {
+        this.gameOver('No more tokens');
+      }
+    }else {
+      this.gameOver(`${target.owner.name} wins!`)
+    }
+  }
 }
