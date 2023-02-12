@@ -28,7 +28,7 @@ class Player {
    */
 
   get unusedTokens(){
-    return this.tokens.filter(token => token.dropped === false);
+    return this.tokens.filter(token => !token.dropped);
   }
 
   /**

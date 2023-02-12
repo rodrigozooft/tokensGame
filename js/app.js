@@ -18,5 +18,5 @@ button.addEventListener('click', function(){
  */
 
 document.addEventListener('keydown', function(e){
-  console.log(e.key); // outpus a string naming the pressed key
+  game.handleKeydown(e);
 })
